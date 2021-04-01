@@ -5,6 +5,16 @@ First of all, install it with NPM
 
 [npm i @fxneptune/instacommandhandler](https://www.npmjs.com/package/@fxneptune/instacommandhandler)
 
+Then
+Make a config.json file for clarity
+```json
+{
+	"user": "username",
+	"password": "password",
+	"prefix": "../"
+}
+```
+
 In your main bot class add
 ```javascript
 const Insta = require('@androz2091/insta.js')
@@ -20,6 +30,8 @@ And
 client.on('messageCreate', message => {
 	cmdhandler.handleCommand(message)
 })
+
+client.login(config.user, config.password);
 ```
 
 Now in order to have a command works you have to make a folder "commands" and in it a category like "utils"
@@ -44,7 +56,6 @@ module.exports = {
 ```
 
 And.. That's it!
-
 
 The module is in french, if a lot of eg user want's it translated I can do it
 *My english is bad when I have to write a lot sorry*
