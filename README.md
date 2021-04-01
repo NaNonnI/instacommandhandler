@@ -2,8 +2,8 @@
 A simple command handler for insta.js
 
 First of all, install it with NPM
-[npm i @fxneptune/instacommandhandler]
-(https://www.npmjs.com/package/@fxneptune/instacommandhandler)
+
+[npm i @fxneptune/instacommandhandler](https://www.npmjs.com/package/@fxneptune/instacommandhandler)
 
 In your main bot class add
 ```javascript
