@@ -27,9 +27,19 @@ var cmdhandler = new handler(client, "/commands", prefix)
 
 And
 ```javascript
-if(!(message.author.id == client.user.id) | message.content.startsWith(config.prefix)) {
-	cmdhandler.handleCommand(message)
-}
+client.on('messageCreate', message => {
+    try {
+	  if (message.content == null) {
+	        return;
+	    } else {
+	    	if(!(message.author.id == client.user.id) || message.content.startsWith(config.prefix)) {
+				cmdhandler.handleCommand(message)
+			}
+	    }
+	} catch (error) {
+	  console.error("Erreur : " + error);
+	}
+})
 
 client.login(config.user, config.password);
 ```
